@@ -178,6 +178,7 @@
     initSkillsAnimation();
     // initTypingAnimation(); // Comentado porque usamos CSS para la animación de typing
   });
+  
   // Mobile menu toggle
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.getElementById('nav-links');
