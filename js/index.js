@@ -112,15 +112,19 @@
   // Formulario de contacto
   function initContactForm() {
     const form = document.getElementById('contactForm');
-    
+  
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      
-      // Aquí puedes agregar código para enviar el formulario mediante AJAX o fetch
-      // Por ahora, solo mostraremos un mensaje de confirmación
-      
-      alert('¡Gracias por tu mensaje! Te responderé a la brevedad.');
-      form.reset();
+  
+      const name = encodeURIComponent(document.getElementById('name').value);
+      const email = encodeURIComponent(document.getElementById('email').value);
+      const subject = encodeURIComponent(document.getElementById('subject').value);
+      const message = encodeURIComponent(document.getElementById('message').value);
+  
+      const body = `Nombre: ${name}%0AEmail: ${email}%0AMensaje: ${message}`;
+      const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=cfreddystiven@gmail.com&su=${subject}&body=${body}`;
+  
+      window.open(mailtoLink, '_blank');
     });
   }
   
